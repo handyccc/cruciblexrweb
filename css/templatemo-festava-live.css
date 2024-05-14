@@ -607,19 +607,20 @@ strong {
 -----------------------------------------*/
 .artists-thumb {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 30px;
 }
 
 .artists-image {
   border-radius: var(--border-radius-medium);
   display: block;
-  width: 100%;
+  width: 100%;  
 }
 
 .artists-thumb:hover .artists-hover {
   transform: translateY(0);
   opacity: 1;
+  z-index: 1;
 }
 
 .artists-hover {
@@ -633,17 +634,22 @@ strong {
   transition: all 0.5s ease;
   transform: translateY(100%);
   position: absolute;
-  bottom: 0;
+  top: 20px;
   right: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0;  
+  z-index: -1;
 }
 
 .artists-hover p strong {
   color: var(--white-color);
   display: inline-block;
-  min-width: 180px;
+  min-width: 80px;
   margin-right: 20px;
+}
+
+.artists-hover p {
+  color: black;
 }
 
 .artists-hover p a {
@@ -1039,3 +1045,15 @@ strong {
   }
 }
 
+#bg-video {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* mask-image: linear-gradient(to top, transparent 0%, black 50%, transparent 100%); */
+  user-select: none;
+  pointer-events: none;
+  /* filter: grayscale(0.8); */
+  aspect-ratio: 16/9;
+}
